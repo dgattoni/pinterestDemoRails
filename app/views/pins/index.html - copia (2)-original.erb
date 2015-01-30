@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+
+ 
+<!-- Si el usuario esta logueado, entonces muestro el boton para crear un nuevo pin-->
+<% if user_signed_in? %>
+  <%= link_to 'New Pin', new_pin_path, class:'btn btn-sm btn-success' %>
+<% end %>
+
+
+<h1>Lista de Todos los Pins.</h1>
+
+<!-- ITERAMOS LOS PINS DE TODOOOOOOSS LOS USUARIOS.
+ (se comunica con el metodo index del controller pins_controlller.rb-->
+
+ 
+
+<div class="container">
+ <% @pins.each do |pin| %>
+
+ <div class="col-md-3">
+  <div class="thumbnail">
+    <p><strong><%= pin.name %></strong></p>
+    <%= image_tag(pin.photo, class:'img-responsive') %>
+    <p><%= pin.description %></p>
+    <%= link_to 'Mostrar', pin, class:'btn btn-default btn-xs' %> 
+    <% if user_signed_in? %>
+    <%= link_to 'Editar', edit_pin_path(pin), class:'btn btn-info btn-xs' %>
+    <%= link_to 'Borrar', pin, method: :delete, data: { confirm: 'estas seguro?' }, class:'btn btn-danger btn-xs' %> <% end %>
+  </div><!-- //cierra thumbnail-->
+</div>  <!-- //cierra col-md-3-->
+<% end %>
+
+</div>
+
+<br>
+
+ 

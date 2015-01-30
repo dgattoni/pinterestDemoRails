@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>STREET MUSIC WALL</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+ 
+ 
+<link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700' rel='stylesheet' type='text/css'>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/masonry/3.2.2/masonry.pkgd.min.js"></script>
+
+
+</head>
+<body>
+
+<!-- AQUI PNER UNA VISTA PARCIAL DEL _NAVBAR.-->
+
+<!-- barra de navegacion parcial que se carga en _navbar.html.erb -->
+<%= render 'layouts/navbar' %>
+
+<%= yield %>
+
+
+<div class="clearfix"></div>
+
+<%= render 'layouts/footer' %>
+
+ 
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+
+<p class="alert"><%= alert %></p>
+</body>
+</html>

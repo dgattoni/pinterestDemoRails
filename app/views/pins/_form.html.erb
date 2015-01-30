@@ -1,0 +1,43 @@
+<%= form_for(@pin) do |f| %>
+<% if @pin.errors.any? %>
+<div id="error_explanation">
+
+  <h2><%= pluralize(@pin.errors.count, "error") %> campos son requeridos:</h2>
+
+  <ul>
+    <% @pin.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+<div class="form-group">
+  <div class="field">
+    Nombre:<br>
+    <%= f.text_field :name, class:'form-control' %>
+  </div>
+</div>
+
+<div class="form-group">
+
+  <div class="field">
+    Descripcion<br>
+    <%= f.text_field :description, class:'form-control' %>
+  </div>
+</div>
+
+<div class="form-group">
+
+ <div class="field">
+   Foto:<br>
+   <%= f.text_field :photo, class:'form-control' %>
+ </div>
+</div>
+
+
+
+<div class="actions">
+  <%= f.submit %>
+</div>
+<% end %>

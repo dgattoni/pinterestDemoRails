@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+
+<div class="container">
+<p>
+   
+    <h2><%= @pin.name %></h2>
+</p>
+<p>
+   
+	 <img src="<%= @pin.photo %>" alt="<%= @pin.name %>" class="img-responsive">
+ 
+</p>
+
+<p class="text-left">
+   <%= @pin.description %>
+</p>
+
+
+
+</div>
+
+<%= link_to 'Edit', edit_pin_path(@pin), class:'btn btn-default' %> |
+<%= link_to 'Back', pins_path, class:'btn btn-default' %>
