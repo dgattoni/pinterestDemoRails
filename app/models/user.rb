@@ -4,7 +4,10 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-    #un user tiene muchos pins.
+	#Paso 4: Hacemos nuestro modelo User compatible con omniauth.
+  devise :omniauthable, omniauth_providers: [:facebook]
+
+	#un user tiene muchos pins.
 	 has_many :pins
  
 end
