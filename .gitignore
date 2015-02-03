@@ -7,6 +7,9 @@
 # Ignore bundler config.
 /.bundle
 
+#ignorar todos los archivos de extension env
+/.env
+
 # Ignore the default SQLite database.
 /db/*.sqlite3
 /db/*.sqlite3-journal

@@ -5,13 +5,14 @@ class PinsController < ApplicationController
  #exigir autenticacipn
   before_filter :authenticate_user!, except: [:index, :show]
   
+def pinsof
+  @user_id = params[:user_id]
+  @user =User.find(@user_id)
+  @pins =@user.pins 
+  
+end
 
-  def pinsof    
-    @user_id = params[:user_id]  
-    @user = User.find(@user_id)
-    @pins = @user.pins
-  end
-
+  
 
   # GET /pins
   # GET /pins.json

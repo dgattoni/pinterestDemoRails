@@ -1,23 +1,23 @@
-<h1>Muestra los pins del Usuario <%= @user_id %></h1>
+ <h1>Pins del usario <%= @user_id %></h1>
 
- 
-<p id="notice"><%= notice %></p>   
+ <% @pins.each do |pin| %>
 
-   <!-- iteramos los pins del usuario x.
-   se comunica con el metodo pinsof del controller pins_controller.rb -->
-
-    <% @pins.each do |pin| %>
       <div class="col-md-3">
+
           <div class="thumbnail">
-              <p><strong><%= pin.name %></strong></p>                  
+
+              <p><strong><%= pin.name %></strong></p>
+                  
                <%= image_tag(pin.photo, class:'img-responsive') %>
-              <p><%= pin.description %></p>       
-                
+
+              <p><%= pin.description %></p>
+
+                <%= link_to 'Mostrar', pin, class:'btn btn-default btn-xs' %> 
+ 
+                  
            </div><!-- //cierra thumbnail-->
+
         </div>  <!-- //cierra col-md-3-->
-    <% end %> 
-
-
-
  
 
+    <% end %>

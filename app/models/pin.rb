@@ -6,4 +6,8 @@ class Pin < ActiveRecord::Base
     # un pin le pertenece a 1 usuario.
     belongs_to :user
 
+    #un pin tiene muchas imagenes.
+    #mount_uploader :avatars, AvatarUploader
+
+
 end

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   devise_for :users
   resources :pins
 
@@ -7,14 +9,16 @@ Rails.application.routes.draw do
   get 'pages/about'
 
   get 'mypins' => 'pins#mypins'
-  get 'pinsof/:user_id' => 'pins#pinsof', as:'pinsof' 
 
-  #get 'mypins' => 'pins#mypins'
-
+  get 'pinsof/:user_id' => 'pins#pinsof'
+ 
+ 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
+
+  #La raiz del documento sera controller pages en su metodo Index
   root 'pages#index'
 
 
