@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :pins
 
  #Devise for users. En este paso vamos a hacer una cosa más, que es agregar
- # la ruta para manejar el callback producido por facebook cuando te loggeas.
+ # la ruta para manejar el callback producido por facebook cuando te logueas.
   devise_for :users, controllers: { 
     registrations: "users/registrations",   
     sessions: "users/sessions", 
@@ -29,7 +29,7 @@ Rails.application.routes.draw do
 
   #La raiz del documento sera controller pages en su metodo Index
   root 'pages#index'
-
+  
 
 
   # Example of regular route:

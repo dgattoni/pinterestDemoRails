@@ -7,7 +7,11 @@
  	<div class="container">
  		<div class="col-lg-12">
  			<p>
- 				<%= image_tag("titulo_conciertos_comentados.png", class:"img-responsive") %>
+				<!--Si el usuario esta logueado entonces que muestre la imagen -->
+				<% if user_signed_in? %>
+	 			<img src="<%= current_user.image %>" alt="" class="img-responsive">
+				<% end  %>
+
  			</p>
 
  			<h2>
